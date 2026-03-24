@@ -5,8 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | SS Technologies</title>
+    <meta name="description" content="Learn about SS Technologies — our journey, team, and mission to deliver engineering excellence.">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .stats-box { background: var(--surface); padding: 50px; border-radius: 30px; border: 1px solid #e2e8f0; }
+        .stats-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            .stats-box { padding: 25px; }
+        }
+        @media (max-width: 480px) {
+            .stats-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
+        }
+    </style>
 </head>
 
 <body>
@@ -40,37 +53,62 @@
                 </ul>
 
                 <div class="header-info">
-                    <a href="mailto:connect@sstechnologies.in" class="contact-item"
-                        style="text-decoration: none; color: inherit;">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                    <a href="mailto:connect@sstechnologies.in" class="contact-item" style="text-decoration: none; color: inherit;">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-details">
                             <span style="color: white;">Email Us</span>
                             <small style="color: var(--primary);">connect@sstechnologies.in</small>
                         </div>
                     </a>
                 </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </div>
     </header>
 
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li>
+                <button class="mobile-services-toggle" id="servicesToggle">Services <i class="fas fa-caret-down"></i></button>
+                <div class="mobile-sub" id="servicesSub">
+                    <a href="embedded.html">Embedded Systems</a>
+                    <a href="software_development.html">Software Development</a>
+                    <a href="appdevelopment.html">App Development</a>
+                    <a href="services.html#industrial">Industrial Automation</a>
+                    <a href="services.html#home-auto">Home Automation</a>
+                    <a href="services.html#pcb">PCB Design</a>
+                    <a href="services.html#uiux">UI/UX Design</a>
+                    <a href="services.html#marketing">Digital Marketing</a>
+                    <a href="services.html#web-dev">Web Development</a>
+                </div>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-email">
+            <a href="mailto:connect@sstechnologies.in"><i class="fas fa-envelope"></i> connect@sstechnologies.in</a>
+        </div>
+    </nav>
+
     <main>
-        <section class="section"
-            style="padding-top: 150px; background: var(--header-bg); color: white; text-align: center;">
+        <section class="section" style="padding-top: 150px; background: var(--header-bg); color: white; text-align: center;">
             <div class="container reveal">
-                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Dedicated to Engineering Excellence</h1>
-                <p style="font-size: 1.25rem; opacity: 0.8; max-width: 800px; margin: 0 auto;">We combine creativity
+                <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px;">Dedicated to Engineering Excellence</h1>
+                <p style="font-size: 1.15rem; opacity: 0.8; max-width: 800px; margin: 0 auto;">We combine creativity
                     with technical precision to build the systems of tomorrow.</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;"
-                    class="reveal">
+                <div class="about-grid reveal">
                     <div>
-                        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Our Journey</h2>
+                        <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 30px;">Our Journey</h2>
                         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">Founded with a
                             vision to bridge the gap between complex hardware and intuitive software, SS Technologies
                             has grown into a multi-disciplinary powerhouse.</p>
@@ -78,9 +116,8 @@
                             engineers, designers, and strategists who believe that technology should empower, not
                             complicate.</p>
                     </div>
-                    <div
-                        style="background: var(--surface); padding: 50px; border-radius: 30px; border: 1px solid var(--border);">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div class="stats-box">
+                        <div class="stats-inner">
                             <div class="stat-card">
                                 <h3 style="font-size: 2.5rem; color: var(--primary);">250+</h3>
                                 <p>Projects Completed</p>
@@ -106,12 +143,10 @@
 
     <footer style="background: black; color: white; padding: 80px 0 40px;">
         <div class="container">
-            <div class="footer-grid" style="grid-template-columns: 2fr 1fr 1fr 1.5fr;">
+            <div class="footer-grid">
                 <div class="footer-info">
-                    <a href="index.html" class="footer-logo"
-                        style="color: white !important; font-size: 1.8rem; margin-bottom: 20px;">SS Technologies</a>
-                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 25px; max-width: 300px;">Leading the way
-                        in software and electronics engineering. We build the tech that powers tomorrow.</p>
+                    <a href="index.html" class="footer-logo" style="color: white !important; font-size: 1.8rem; margin-bottom: 20px;">SS Technologies</a>
+                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 25px; max-width: 300px;">Leading the way in software and electronics engineering.</p>
                     <div style="display: flex; gap: 15px;">
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
@@ -127,29 +162,24 @@
                 </div>
                 <div class="footer-links">
                     <h4 style="color: white; margin-bottom: 25px; font-size: 1.3rem;">Services</h4>
-                    <a href="embedded.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">Embedded
-                        Systems</a>
-                    <a href="software_development.html"
-                        style="color: #94a3b8; display: block; margin-bottom: 12px;">Software Development</a>
-                    <a href="appdevelopment.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">App
-                        Development</a>
+                    <a href="embedded.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">Embedded Systems</a>
+                    <a href="software_development.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">Software Development</a>
+                    <a href="appdevelopment.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">App Development</a>
                     <a href="services.html#industrial" style="color: #94a3b8; display: block;">Industrial Automation</a>
                 </div>
                 <div class="footer-links" style="color: #94a3b8;">
                     <h4 style="color: white; margin-bottom: 25px; font-size: 1.3rem;">Contact</h4>
                     <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                         <i class="fas fa-map-marker-alt" style="color: var(--primary); margin-top: 5px;"></i>
-                        <span style="color: #cbd5e1;">123 Tech Park, Silicon Valley</span>
+                        <span style="color: #cbd5e1;">123 Tech Park, hopes, Coimbatore</span>
                     </div>
-                    <a href="mailto:connect@sstechnologies.in"
-                        style="display: flex; gap: 15px; text-decoration: none; color: inherit;">
+                    <a href="mailto:connect@sstechnologies.in" style="display: flex; gap: 15px; text-decoration: none; color: inherit;">
                         <i class="fas fa-envelope" style="color: var(--primary);"></i>
                         <span style="color: #cbd5e1;">connect@sstechnologies.in</span>
                     </a>
                 </div>
             </div>
-            <div class="footer-bottom"
-                style="border-top: 1px solid #222; margin-top: 50px; padding-top: 40px; color: #555; text-align: center;">
+            <div class="footer-bottom" style="border-top: 1px solid #222; margin-top: 50px; padding-top: 40px; color: #555; text-align: center;">
                 <p>&copy; 2026 SS Technologies. All rights reserved.</p>
             </div>
         </div>
@@ -157,11 +187,32 @@
 
     <script>
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('reveal');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+        const servicesToggle = document.getElementById('servicesToggle');
+        const servicesSub = document.getElementById('servicesSub');
+        if (servicesToggle) {
+            servicesToggle.addEventListener('click', () => {
+                servicesToggle.classList.toggle('open');
+                servicesSub.classList.toggle('open');
+            });
+        }
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
     </script>
 </body>
 

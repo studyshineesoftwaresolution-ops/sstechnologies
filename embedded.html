@@ -4,9 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Systems & ECE | SS Technologies</title>
+    <title>Embedded Systems &amp; ECE | SS Technologies</title>
+    <meta name="description" content="SS Technologies — embedded systems, firmware development, IoT, and RTOS solutions.">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .emb-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
+        .emb-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+        .emb-banner { position: relative; border-radius: 30px; overflow: hidden; height: 400px; margin-bottom: 50px; }
+        .emb-banner img { width: 100%; height: 100%; object-fit: cover; }
+        .emb-banner-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(15,23,42,0.85), transparent);
+            display: flex; align-items: center; padding: 0 50px;
+        }
+        @media (max-width: 768px) {
+            .emb-layout { grid-template-columns: 1fr; gap: 30px; }
+            .emb-mini-grid { grid-template-columns: 1fr; }
+            .emb-banner { height: 240px; }
+            .emb-banner-overlay { padding: 0 20px; }
+            .emb-banner-overlay h1 { font-size: 1.8rem !important; }
+        }
+    </style>
 </head>
 
 <body>
@@ -40,41 +59,67 @@
                 </ul>
 
                 <div class="header-info">
-                    <a href="mailto:connect@sstechnologies.in" class="contact-item"
-                        style="text-decoration: none; color: inherit;">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                    <a href="mailto:connect@sstechnologies.in" class="contact-item" style="text-decoration: none; color: inherit;">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-details">
                             <span style="color: white;">Email Us</span>
                             <small style="color: var(--primary);">connect@sstechnologies.in</small>
                         </div>
                     </a>
                 </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </div>
     </header>
 
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <button class="mobile-services-toggle" id="servicesToggle">Services <i class="fas fa-caret-down"></i></button>
+                <div class="mobile-sub" id="servicesSub">
+                    <a href="embedded.html">Embedded Systems</a>
+                    <a href="software_development.html">Software Development</a>
+                    <a href="appdevelopment.html">App Development</a>
+                    <a href="services.html#industrial">Industrial Automation</a>
+                    <a href="services.html#home-auto">Home Automation</a>
+                    <a href="services.html#pcb">PCB Design</a>
+                    <a href="services.html#uiux">UI/UX Design</a>
+                    <a href="services.html#marketing">Digital Marketing</a>
+                    <a href="services.html#web-dev">Web Development</a>
+                </div>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-email">
+            <a href="mailto:connect@sstechnologies.in"><i class="fas fa-envelope"></i> connect@sstechnologies.in</a>
+        </div>
+    </nav>
+
     <main>
         <section class="section" style="padding-top: 120px;">
             <div class="container">
-                <div class="reveal"
-                    style="position: relative; border-radius: 30px; overflow: hidden; height: 400px; margin-bottom: 50px;">
-                    <img src="assets/embedded_banner.png" alt="Embedded Systems Banner"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                    <div
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(15, 23, 42, 0.8), transparent); display: flex; align-items: center; padding: 0 50px;">
+                <!-- Banner -->
+                <div class="emb-banner reveal">
+                    <img src="assets/embedded_banner.png" alt="Embedded Systems Banner">
+                    <div class="emb-banner-overlay">
                         <div style="color: white; max-width: 550px;">
-                            <h1 style="font-size: 3rem; margin-bottom: 20px;">Embedded Systems & ECE Solutions</h1>
-                            <p style="font-size: 1.2rem; opacity: 0.9;">Leading the intersection of hardware and
+                            <h1 style="font-size: 3rem; margin-bottom: 20px;">Embedded Systems &amp; ECE Solutions</h1>
+                            <p style="font-size: 1.1rem; opacity: 0.9;">Leading the intersection of hardware and
                                 software with specialized electronics engineering.</p>
                         </div>
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 60px;">
+                <!-- Content -->
+                <div class="emb-layout">
                     <div class="reveal">
-                        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Technological Core</h2>
+                        <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 30px;">Technological Core</h2>
                         <p style="margin-bottom: 20px;">At the heart of modern innovation lies the seamless integration
                             of hardware and software. SS Technologies provides end-to-end ECE solutions, from low-level
                             firmware development to full-scale electronic system architecture.</p>
@@ -82,7 +127,7 @@
                             (RTOS), and IoT integration allows us to build smart devices that are efficient, reliable,
                             and powerful. We bridge the gap between abstract software and physical reality.</p>
 
-                        <div class="services-grid" style="grid-template-columns: 1fr 1fr; gap: 30px;">
+                        <div class="emb-mini-grid">
                             <div class="card">
                                 <i class="fas fa-microchip" style="font-size: 2rem; color: var(--primary);"></i>
                                 <h3>Firmware Dev</h3>
@@ -91,8 +136,7 @@
                             <div class="card">
                                 <i class="fas fa-network-wired" style="font-size: 2rem; color: var(--primary);"></i>
                                 <h3>IoT Systems</h3>
-                                <p>End-to-end Internet of Things solutions with cloud connectivity and sensor fusion.
-                                </p>
+                                <p>End-to-end Internet of Things solutions with cloud connectivity and sensor fusion.</p>
                             </div>
                             <div class="card">
                                 <i class="fas fa-project-diagram" style="font-size: 2rem; color: var(--primary);"></i>
@@ -108,29 +152,27 @@
                     </div>
 
                     <div class="reveal">
-                        <div
-                            style="background: var(--surface); padding: 40px; border-radius: 20px; border: 1px solid var(--border);">
+                        <div style="background: var(--surface); padding: 40px; border-radius: 20px; border: 1px solid #e2e8f0;">
                             <h3 style="margin-bottom: 25px;">Key Competencies</h3>
                             <ul style="list-style: none;">
                                 <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
-                                    <i class="fas fa-check" style="color: var(--primary);"></i>
+                                    <i class="fas fa-check" style="color: var(--primary); flex-shrink: 0;"></i>
                                     <span>C / C++ for Embedded</span>
                                 </li>
                                 <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
-                                    <i class="fas fa-check" style="color: var(--primary);"></i>
+                                    <i class="fas fa-check" style="color: var(--primary); flex-shrink: 0;"></i>
                                     <span>Communication Protocols (I2C, SPI, UART)</span>
                                 </li>
                                 <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
-                                    <i class="fas fa-check" style="color: var(--primary);"></i>
+                                    <i class="fas fa-check" style="color: var(--primary); flex-shrink: 0;"></i>
                                     <span>Wireless (LoRa, Zigbee, BLE)</span>
                                 </li>
                                 <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
-                                    <i class="fas fa-check" style="color: var(--primary);"></i>
+                                    <i class="fas fa-check" style="color: var(--primary); flex-shrink: 0;"></i>
                                     <span>Sensor Interfacing</span>
                                 </li>
                             </ul>
-                            <a href="contact.html" class="btn btn-primary"
-                                style="width: 100%; margin-top: 30px; text-align: center;">Consult an Engineer</a>
+                            <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: 30px; text-align: center; display: block;">Consult an Engineer</a>
                         </div>
                     </div>
                 </div>
@@ -140,12 +182,10 @@
 
     <footer style="background: black; color: white; padding: 80px 0 40px;">
         <div class="container">
-            <div class="footer-grid" style="grid-template-columns: 2fr 1fr 1fr 1.5fr;">
+            <div class="footer-grid">
                 <div class="footer-info">
-                    <a href="index.html" class="footer-logo"
-                        style="color: white !important; font-size: 1.8rem; margin-bottom: 20px;">SS Technologies</a>
-                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 25px; max-width: 300px;">Leading the way
-                        in software and electronics engineering. We build the tech that powers tomorrow.</p>
+                    <a href="index.html" class="footer-logo" style="color: white !important; font-size: 1.8rem; margin-bottom: 20px;">SS Technologies</a>
+                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 25px; max-width: 300px;">Leading the way in software and electronics engineering.</p>
                     <div style="display: flex; gap: 15px;">
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
                         <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
@@ -161,29 +201,24 @@
                 </div>
                 <div class="footer-links">
                     <h4 style="color: white; margin-bottom: 25px; font-size: 1.3rem;">Services</h4>
-                    <a href="embedded.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">Embedded
-                        Systems</a>
-                    <a href="software_development.html"
-                        style="color: #94a3b8; display: block; margin-bottom: 12px;">Software Development</a>
-                    <a href="appdevelopment.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">App
-                        Development</a>
+                    <a href="embedded.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">Embedded Systems</a>
+                    <a href="software_development.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">Software Development</a>
+                    <a href="appdevelopment.html" style="color: #94a3b8; display: block; margin-bottom: 12px;">App Development</a>
                     <a href="services.html#industrial" style="color: #94a3b8; display: block;">Industrial Automation</a>
                 </div>
                 <div class="footer-links" style="color: #94a3b8;">
                     <h4 style="color: white; margin-bottom: 25px; font-size: 1.3rem;">Contact</h4>
                     <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                         <i class="fas fa-map-marker-alt" style="color: var(--primary); margin-top: 5px;"></i>
-                        <span style="color: #cbd5e1;">123 Tech Park, Silicon Valley</span>
+                        <span style="color: #cbd5e1;">123 Tech Park, hopes, Coimbatore</span>
                     </div>
-                    <a href="mailto:connect@sstechnologies.in"
-                        style="display: flex; gap: 15px; text-decoration: none; color: inherit;">
+                    <a href="mailto:connect@sstechnologies.in" style="display: flex; gap: 15px; text-decoration: none; color: inherit;">
                         <i class="fas fa-envelope" style="color: var(--primary);"></i>
                         <span style="color: #cbd5e1;">connect@sstechnologies.in</span>
                     </a>
                 </div>
             </div>
-            <div class="footer-bottom"
-                style="border-top: 1px solid #222; margin-top: 50px; padding-top: 40px; color: #555; text-align: center;">
+            <div class="footer-bottom" style="border-top: 1px solid #222; margin-top: 50px; padding-top: 40px; color: #555; text-align: center;">
                 <p>&copy; 2026 SS Technologies. All rights reserved.</p>
             </div>
         </div>
@@ -191,11 +226,32 @@
 
     <script>
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('reveal');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+        const servicesToggle = document.getElementById('servicesToggle');
+        const servicesSub = document.getElementById('servicesSub');
+        if (servicesToggle) {
+            servicesToggle.addEventListener('click', () => {
+                servicesToggle.classList.toggle('open');
+                servicesSub.classList.toggle('open');
+            });
+        }
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
     </script>
 </body>
 
